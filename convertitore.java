@@ -49,7 +49,7 @@ public class convertitore extends Application {
 
 		numero = Integer.parseInt(tConvertire.getText());
 		base = Integer.parseInt(tBase.getText());
-		HashTable <Int,String> my_dict = new HashTable <Int,String>();
+		HashTable <Integer,String> my_dict = new HashTable <Integer,String>();
 		my_dict.put(10,"A")
 		my_dict.get(10)
 		my_dict.put(11,"B")
@@ -61,7 +61,7 @@ public class convertitore extends Application {
 		my_dict.put(14,"E")
 		my_dict.get(14)
 		my_dict.put(15,"F")
-		my_dict.get(15)
+		my_dict.get(15) 
 		int resto = 0;
 		String s = " ";
 		for(int i=0;numero>0;i++) {
