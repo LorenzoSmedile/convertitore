@@ -41,37 +41,69 @@ public class convertitore extends Application {
 
 	}
 
-	public void calcola() {
+	private void Calcola() {
 
-		int numero;
-		int base;
-		String risposta = "";
+		int valore = Integer.parseInt(tConvertire.getText());
+		int base = Integer.parseInt(tBase.getText());
+		int Resto = 0;
+		String s = "";
+		if (base == 16) {
+			while (valore > 0) {
+				Resto = valore;
+				valore = valore / base;
+				Resto = Resto - (valore * base);
+				if (Resto < 10) {
+					s = Resto + s;
+				}
 
-		numero = Integer.parseInt(tConvertire.getText());
-		base = Integer.parseInt(tBase.getText());
-		HashTable <Integer,String> my_dict = new HashTable <Integer,String>();
-		my_dict.put(10,"A")
-		my_dict.get(10)
-		my_dict.put(11,"B")
-		my_dict.get(11)
-		my_dict.put(12,"C")
-		my_dict.get(12)
-		my_dict.put(13,"D")
-		my_dict.get(13)
-		my_dict.put(14,"E")
-		my_dict.get(14)
-		my_dict.put(15,"F")
-		my_dict.get(15) 
-		int resto = 0;
-		String s = " ";
-		for(int i=0;numero>0;i++) {
-			resto=numero;
-			numero=numero/base;
-			resto=resto-(numero*base);
-			s=resto+s;
+				if (Resto == 10) {
+					s = "A" + s;
+				}
+
+				if (Resto == 11) {
+
+					s = "B" + s;
+
+				}
+
+				if (Resto == 12) {
+
+					s = "C" + s;
+
+				}
+
+				if (Resto == 13) {
+
+					s = "D" + s;
+
+				}
+
+				if (Resto == 14) {
+
+					s = "E" + s;
+
+				}
+
+				if (Resto == 15) {
+
+					s = "F" + s;
+
+				}
+
+			}
+
+		} else {
+			while (valore > 0) {
+				Resto = valore;
+				valore = valore / base;
+				Resto = Resto - (valore * base);
+				s = Resto + s;
+			}
+
 		}
-		lNumeroC.setText(risposta);
-		
+
+		lNumeroC.setText(s);
+
 	}
 		
 
