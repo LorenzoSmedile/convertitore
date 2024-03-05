@@ -7,16 +7,18 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
-import java.util.*
+import java.util.*;
+
 
 public class convertitore extends Application {
 
 	Label lConvertire = new Label(" n° da convertire ");
-	Label lBase = new Label(" base ");
+	Label lBase = new Label(" basi partenza e arrivo ");
 	Label lNumero = new Label(" numero c. ");
 	Label lNumeroC = new Label();
 	TextField tConvertire = new TextField();
 	TextField tBase = new TextField();
+	TextField tBase2 = new TextField();
 	Button bCalcola = new Button("converti");
 
 	public void start(Stage finestra) {
@@ -27,9 +29,10 @@ public class convertitore extends Application {
 		griglia.add(tConvertire, 1, 0);
 		griglia.add(lBase, 0, 1);
 		griglia.add(tBase, 1, 1);
-		griglia.add(lNumero, 0, 2);
-		griglia.add(lNumeroC, 0, 3);
-		griglia.add(bCalcola, 1, 4);
+		griglia.add(tBase2, 1, 2);
+		griglia.add(lNumero, 0, 3);
+		griglia.add(lNumeroC, 0, 4);
+		griglia.add(bCalcola, 1, 5);
 
 		Scene scena = new Scene(griglia);
 
@@ -37,16 +40,23 @@ public class convertitore extends Application {
 		finestra.setScene(scena);
 		finestra.show();
 
-		bCalcola.setOnAction(e -> calcola());
+		bCalcola.setOnAction(e -> Calcola());
 
 	}
 
 	private void Calcola() {
-
 		int valore = Integer.parseInt(tConvertire.getText());
 		int base = Integer.parseInt(tBase.getText());
+		Hashtable<Integer, String> my_dict= new Hashtable<Integer,String>();
 		int Resto = 0;
 		String s = "";
+		
+		my_dict.put(10, "A");
+		my_dict.put(11, "B");
+		my_dict.put(12, "C");
+		my_dict.put(13, "D");
+		my_dict.put(14, "E");
+		my_dict.put(15, "F");
 		if (base == 16) {
 			while (valore > 0) {
 				Resto = valore;
@@ -55,39 +65,24 @@ public class convertitore extends Application {
 				if (Resto < 10) {
 					s = Resto + s;
 				}
-
 				if (Resto == 10) {
-					s = "A" + s;
+					my_dict.get(10);
 				}
-
 				if (Resto == 11) {
-
-					s = "B" + s;
-
+					my_dict.get(11);
 				}
-
 				if (Resto == 12) {
-
-					s = "C" + s;
-
+					my_dict.get(12);
 				}
-
 				if (Resto == 13) {
-
-					s = "D" + s;
-
+					my_dict.get(13);
 				}
-
 				if (Resto == 14) {
-
-					s = "E" + s;
-
+					my_dict.get(14);
 				}
-
 				if (Resto == 15) {
-
-					s = "F" + s;
-
+					my_dict.get(15);
+					
 				}
 
 			}
@@ -105,8 +100,6 @@ public class convertitore extends Application {
 		lNumeroC.setText(s);
 
 	}
-		
-
 	
 
 	public static void main(String[] args) {
